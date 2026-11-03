@@ -9,445 +9,605 @@
     <title>Galería | ITACE Plantel Reynosa</title>
 
     <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        /* =====================================
+           GALERÍA ITACE
+        ===================================== */
+
+        .album-itace {
+            padding: 65px 5%;
+            background: linear-gradient(
+                180deg,
+                #fff8fb,
+                #ffeef5,
+                #fff9fc
+            );
+        }
+
+        .album-encabezado {
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto 35px;
+        }
+
+        .album-etiqueta {
+            display: inline-block;
+            color: #b64d7c;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .album-encabezado h1 {
+            color: #8d315d;
+            font-size: clamp(28px, 4vw, 44px);
+            margin-bottom: 18px;
+        }
+
+        .album-encabezado p {
+            color: #76586b;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .album-decoracion {
+            color: #d66d9c;
+            font-size: 25px;
+            margin-top: 20px;
+        }
+
+        /* FILTROS */
+
+        .album-filtros {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 35px;
+        }
+
+        .filtro-album {
+            border: 2px solid #e6a5c4;
+            border-radius: 30px;
+            background: white;
+            color: #8d315d;
+            padding: 11px 22px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .filtro-album:hover,
+        .filtro-album.activo {
+            background: #b8497d;
+            border-color: #b8497d;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* GALERÍA */
+
+        .album-itace .album-galeria {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 22px;
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        .album-itace .album-foto {
+            min-width: 0;
+            margin: 0;
+            border-radius: 20px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 7px 22px rgba(126, 47, 87, 0.12);
+            transition: 0.3s;
+        }
+
+        .album-itace .album-foto:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 30px rgba(126, 47, 87, 0.20);
+        }
+
+        .album-itace .album-abrir {
+            display: block;
+            width: 100%;
+            padding: 0;
+            border: 0;
+            background: #fce4ee;
+            cursor: zoom-in;
+            overflow: hidden;
+        }
+
+        .album-itace .album-abrir img {
+            display: block;
+            width: 100%;
+            height: 205px;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .album-itace .album-foto:hover img {
+            transform: scale(1.07);
+        }
+
+        .album-itace .album-foto figcaption {
+            padding: 17px;
+        }
+
+        .album-itace .album-foto figcaption span {
+            color: #b8497d;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .album-itace .album-foto figcaption h3 {
+            color: #813657;
+            margin: 8px 0;
+            font-size: 17px;
+        }
+
+        .album-itace .album-foto figcaption p {
+            color: #806b77;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        /* VER MÁS */
+
+        .album-acciones {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        .album-ver-mas {
+            padding: 14px 30px;
+            border: none;
+            border-radius: 30px;
+            background: #b8497d;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .album-ver-mas:hover {
+            background: #8d315d;
+            transform: translateY(-3px);
+        }
+
+        .album-vacio,
+        .album-indicacion {
+            text-align: center;
+            margin-top: 25px;
+            color: #995675;
+        }
+
+        /* VENTANA DE FOTOGRAFÍA */
+
+        #albumModal {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            background: rgba(32, 13, 29, 0.90);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        #albumModal .album-modal-contenido {
+            position: relative;
+            width: min(900px, 100%);
+            max-height: 95vh;
+            overflow-y: auto;
+            padding: 25px;
+            border-radius: 22px;
+            background: #fff7fb;
+            text-align: center;
+        }
+
+        #albumModal .album-cerrar {
+            position: absolute;
+            top: 10px;
+            right: 13px;
+            z-index: 2;
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            background: #b8497d;
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        #albumModal .album-modal-imagen {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 35px;
+        }
+
+        #albumModal #albumImagenGrande {
+            width: min(700px, 100%);
+            max-width: calc(100% - 100px);
+            max-height: 65vh;
+            object-fit: contain;
+            border-radius: 14px;
+        }
+
+        #albumModal .album-flecha {
+            flex-shrink: 0;
+            width: 42px;
+            height: 42px;
+            border: none;
+            border-radius: 50%;
+            background: #b8497d;
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        #albumModal h3 {
+            margin-top: 18px;
+            color: #813657;
+        }
+
+        #albumModal p {
+            margin: 8px 0;
+            color: #806b77;
+        }
+
+        #albumContador {
+            color: #b8497d;
+            font-weight: bold;
+        }
+
+        /* ELEMENTOS OCULTOS */
+
+        .album-itace .album-foto[hidden],
+        #albumVacio[hidden],
+        #albumVerMas[hidden],
+        #albumModal[hidden] {
+            display: none !important;
+        }
+
+        /* TABLETAS */
+
+        @media (max-width: 1050px) {
+            .album-itace .album-galeria {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 800px) {
+            .album-itace .album-galeria {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        /* CELULARES */
+
+        @media (max-width: 550px) {
+            .album-itace {
+                padding: 40px 15px;
+            }
+
+            .album-itace .album-galeria {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .album-itace .album-abrir img {
+                height: 240px;
+            }
+
+            .filtro-album {
+                padding: 9px 14px;
+                font-size: 13px;
+            }
+
+            #albumModal {
+                padding: 10px;
+            }
+
+            #albumModal .album-modal-contenido {
+                padding: 15px;
+            }
+
+            #albumModal .album-flecha {
+                width: 34px;
+                height: 34px;
+                font-size: 17px;
+            }
+
+            #albumModal #albumImagenGrande {
+                max-width: calc(100% - 80px);
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- =====================================
-     ENCABEZADO
-===================================== -->
+    <!-- ENCABEZADO -->
 
-<header class="encabezado">
-
-    <div class="marca">
-        <span class="logo-texto">ITACE</span>
-        <span>PLANTEL REYNOSA</span>
-    </div>
-
-    <p>Educación • Innovación • Futuro</p>
-
-</header>
-
-
-<!-- =====================================
-     MENÚ DE NAVEGACIÓN
-===================================== -->
-
-<nav class="menu-principal">
-
-    <a href="../index.html#inicio" class="marca-itace">
-
-        <span class="marca-icono">🎓</span>
-
-        <span class="marca-texto">
-            <strong>ITACE</strong>
-            <small>Nuestra Historia, Nuestro Futuro</small>
-        </span>
-
-    </a>
-
-    <!-- BOTÓN PARA CELULARES -->
-
-    <button
-        class="menu-hamburguesa"
-        id="menuHamburguesa"
-        type="button"
-        aria-label="Abrir menú"
-        aria-controls="enlacesMenu"
-        aria-expanded="false">
-        ☰
-    </button>
-
-    <!-- ENLACES DEL MENÚ -->
-
-    <div class="enlaces-menu" id="enlacesMenu">
-
-        <a href="../index.html#inicio">Inicio</a>
-
-        <a href="conocenos.html#historia">Historia</a>
-
-        <a href="oferta-educativa.html#carreras">Carreras</a>
-
-        <a href="vida-estudiantil.html#beneficios">Beneficios</a>
-
-        <a href="vida-estudiantil.html#clubes">Clubes</a>
-
-        <a href="vida-estudiantil.html#cursos">Cursos</a>
-
-        <a href="galeria.html#eventos">Vida Estudiantil</a>
-
-        <a href="instalaciones.html#instalaciones">Instalaciones</a>
-
-        <a href="contacto.html#contacto">Contacto</a>
-
-    </div>
-
-</nav>
-
-
-<main>
-
-<!-- =====================================
-     VIDA ESTUDIANTIL - ÁLBUM DIGITAL
-===================================== -->
-
-<section class="seccion album-itace" id="eventos">
-
-    <!-- ENCABEZADO DEL ÁLBUM -->
-
-    <div class="album-encabezado">
-
-        <span class="album-etiqueta">
-            ✦ MOMENTOS QUE PERMANECEN ✦
-        </span>
-
-        <h2>📸 Nuestro álbum de recuerdos</h2>
-
-        <p>
-            Cada fotografía guarda una historia, una sonrisa
-            y un momento especial. Descubre las experiencias
-            que forman parte de la vida estudiantil del
-            ITACE Plantel Reynosa.
-        </p>
-
-        <div class="album-decoracion">
-            ✦ ♡ ✦
+    <header class="encabezado">
+        <div class="marca">
+            <span class="logo-texto">ITACE</span>
+            <span>PLANTEL REYNOSA</span>
         </div>
 
-    </div>
+        <p>Educación • Innovación • Futuro</p>
+    </header>
 
+    <!-- MENÚ DE NAVEGACIÓN -->
 
-    <!-- =====================================
-         FILTROS DEL ÁLBUM
-    ===================================== -->
+    <nav class="menu-principal" aria-label="Menú principal">
 
-    <div class="album-filtros" aria-label="Filtrar recuerdos">
+        <a href="../index.html#inicio" class="marca-itace">
+            <span class="marca-icono">🎓</span>
 
-        <!-- TODOS -->
-
-        <button
-            class="filtro-album activo"
-            type="button"
-            data-filtro="todos"
-            aria-pressed="true">
-            ✨ Todos
-        </button>
-
-        <!-- EVENTOS -->
+            <span class="marca-texto">
+                <strong>ITACE</strong>
+                <small>Nuestra Historia, Nuestro Futuro</small>
+            </span>
+        </a>
 
         <button
-            class="filtro-album"
+            class="menu-hamburguesa"
+            id="menuHamburguesa"
             type="button"
-            data-filtro="eventos"
-            aria-pressed="false">
-            🎉 Eventos
+            aria-label="Abrir menú"
+            aria-controls="enlacesMenu"
+            aria-expanded="false">
+            ☰
         </button>
 
-        <!-- TALLERES -->
+        <div class="enlaces-menu" id="enlacesMenu">
 
-        <button
-            class="filtro-album"
-            type="button"
-            data-filtro="talleres"
-            aria-pressed="false">
-            🔬 Talleres
-        </button>
+            <a href="../index.html#inicio">Inicio</a>
+            <a href="conocenos.html#historia">Historia</a>
+            <a href="identidad.html#identidad">Identidad</a>
+            <a href="oferta-educativa.html#carreras">Carreras</a>
+            <a href="docentes.html#docentes">Docentes</a>
+            <a href="proyectos.html#proyectos">Proyectos</a>
+            <a href="noticias.html#noticias">Noticias</a>
+            <a href="eventos.html#eventos">Eventos</a>
+            <a href="vida-estudiantil.html#beneficios">Beneficios</a>
+            <a href="vida-estudiantil.html#clubes">Clubes</a>
+            <a href="vida-estudiantil.html#cursos">Cursos</a>
+            <a href="galeria.html#galeria">Galería</a>
+            <a href="instalaciones.html#instalaciones">Instalaciones</a>
+            <a href="admisiones.html#inscripciones">Inscripciones</a>
+            <a href="preguntas.html#preguntas">Preguntas</a>
+            <a href="contacto.html#contacto">Contacto</a>
 
-        <!-- DEPORTES -->
+        </div>
+    </nav>
 
-        <button
-            class="filtro-album"
-            type="button"
-            data-filtro="deportes"
-            aria-pressed="false">
-            🏆 Deportes
-        </button>
+    <main>
 
-        <!-- CULTURA -->
+        <!-- =====================================
+             ÁLBUM DIGITAL ITACE
+        ===================================== -->
 
-        <button
-            class="filtro-album"
-            type="button"
-            data-filtro="cultura"
-            aria-pressed="false">
-            🎭 Cultura
-        </button>
+        <section class="seccion album-itace" id="galeria">
 
-    </div>
+            <div class="album-encabezado">
 
+                <span class="album-etiqueta">
+                    ✦ MOMENTOS QUE PERMANECEN ✦
+                </span>
 
-    <!-- =====================================
-         GALERÍA DE FOTOGRAFÍAS
-    ===================================== -->
-
-    <div class="album-galeria" id="albumGaleria">
-
-        <!-- FOTO 1: EVENTOS -->
-
-        <figure class="album-foto" data-categoria="eventos">
-
-            <button
-                class="album-abrir"
-                type="button"
-                aria-label="Ampliar evento escolar">
-
-                <img
-                    src="../img/foto8.jpg"
-                    alt="Evento escolar del ITACE"
-                    loading="lazy">
-
-            </button>
-
-            <figcaption>
-
-                <span>🎉 Eventos</span>
-
-                <h3>Momentos especiales</h3>
+                <h1>📸 Nuestro álbum de recuerdos</h1>
 
                 <p>
-                    Recuerdos de nuestra comunidad escolar.
+                    Cada fotografía guarda una historia,
+                    una sonrisa y un momento especial.
+                    Descubre las experiencias que forman
+                    parte de la vida estudiantil del
+                    ITACE Plantel Reynosa.
                 </p>
 
-            </figcaption>
+                <div class="album-decoracion">
+                    ✦ ♡ ✦
+                </div>
 
-        </figure>
+            </div>
 
+            <!-- FILTROS -->
 
-        <!-- FOTO 2: TALLERES -->
-
-        <figure class="album-foto" data-categoria="talleres">
-
-            <button
-                class="album-abrir"
-                type="button"
-                aria-label="Ampliar actividad estudiantil">
-
-                <img
-                    src="../img/foto9.jpg"
-                    alt="Actividad estudiantil del ITACE"
-                    loading="lazy">
-
-            </button>
-
-            <figcaption>
-
-                <span>🔬 Talleres</span>
-
-                <h3>Aprendiendo juntos</h3>
-
-                <p>
-                    Experiencias que fortalecen el aprendizaje.
-                </p>
-
-            </figcaption>
-
-        </figure>
-
-
-        <!-- FOTO 3: EVENTOS -->
-
-        <figure class="album-foto" data-categoria="eventos">
-
-            <button
-                class="album-abrir"
-                type="button"
-                aria-label="Ampliar celebración escolar">
-
-                <img
-                    src="../img/foto10.jpg"
-                    alt="Celebración escolar del ITACE"
-                    loading="lazy">
-
-            </button>
-
-            <figcaption>
-
-                <span>🎉 Eventos</span>
-
-                <h3>Celebraciones inolvidables</h3>
-
-                <p>
-                    Instantes para recordar.
-                </p>
-
-            </figcaption>
-
-        </figure>
-
-
-        <!-- FOTO 4: CULTURA -->
-
-        <figure class="album-foto" data-categoria="cultura">
-
-            <button
-                class="album-abrir"
-                type="button"
-                aria-label="Ampliar fotografía de banda de guerra">
-
-                <img
-                    src="../img/foto11.jpg"
-                    alt="Banda de guerra del ITACE"
-                    loading="lazy">
-
-            </button>
-
-            <figcaption>
-
-                <span>🎭 Cultura</span>
-
-                <h3>Orgullo y tradición</h3>
-
-                <p>
-                    Nuestra banda de guerra.
-                </p>
-
-            </figcaption>
-
-        </figure>
-
-    </div>
-
-
-    <!-- =====================================
-         MENSAJE SIN RESULTADOS
-    ===================================== -->
-
-    <p
-        class="album-vacio"
-        id="albumVacio"
-        hidden>
-
-        💌 Pronto agregaremos recuerdos de esta categoría.
-
-    </p>
-
-
-    <!-- INDICACIÓN -->
-
-    <p class="album-indicacion">
-        ✦ Selecciona una fotografía para revivir ese momento ✦
-    </p>
-
-
-    <!-- =====================================
-         VENTANA PARA AMPLIAR FOTOGRAFÍAS
-    ===================================== -->
-
-    <div
-        class="album-modal"
-        id="albumModal"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Fotografía ampliada"
-        aria-hidden="true"
-        hidden>
-
-        <div class="album-modal-contenido">
-
-            <!-- BOTÓN CERRAR -->
-
-            <button
-                class="album-cerrar"
-                id="albumCerrar"
-                type="button"
-                aria-label="Cerrar fotografía">
-                ✕
-            </button>
-
-
-            <!-- IMAGEN AMPLIADA -->
-
-            <div class="album-modal-imagen">
-
-                <!-- FLECHA ANTERIOR -->
+            <div class="album-filtros"
+                 aria-label="Filtrar fotografías">
 
                 <button
-                    class="album-flecha"
-                    id="albumAnterior"
+                    class="filtro-album activo"
                     type="button"
-                    aria-label="Fotografía anterior">
-                    ❮
+                    data-filtro="todos"
+                    aria-pressed="true">
+                    ✨ Todos
                 </button>
 
-
-                <!-- FOTOGRAFÍA -->
-
-                <img
-                    id="albumImagenGrande"
-                    src=""
-                    alt="">
-
-
-                <!-- FLECHA SIGUIENTE -->
+                <button
+                    class="filtro-album"
+                    type="button"
+                    data-filtro="eventos"
+                    aria-pressed="false">
+                    🎉 Eventos
+                </button>
 
                 <button
-                    class="album-flecha"
-                    id="albumSiguiente"
+                    class="filtro-album"
                     type="button"
-                    aria-label="Fotografía siguiente">
-                    ❯
+                    data-filtro="talleres"
+                    aria-pressed="false">
+                    🔬 Talleres
+                </button>
+
+                <button
+                    class="filtro-album"
+                    type="button"
+                    data-filtro="deportes"
+                    aria-pressed="false">
+                    🏆 Deportes
+                </button>
+
+                <button
+                    class="filtro-album"
+                    type="button"
+                    data-filtro="cultura"
+                    aria-pressed="false">
+                    🎭 Cultura
                 </button>
 
             </div>
 
+            <!-- LAS 20 FOTOS SE CREAN CON JAVASCRIPT -->
 
-            <!-- INFORMACIÓN DE LA FOTOGRAFÍA -->
+            <div class="album-galeria" id="albumGaleria"></div>
 
-            <h3 id="albumTitulo"></h3>
+            <p class="album-vacio" id="albumVacio" hidden>
+                💌 Todavía no hay fotografías en esta categoría.
+            </p>
 
-            <p id="albumDescripcion"></p>
+            <div class="album-acciones">
+                <button
+                    class="album-ver-mas"
+                    id="albumVerMas"
+                    type="button"
+                    hidden>
+                    💗 Ver más fotografías
+                </button>
+            </div>
 
-            <span id="albumContador"></span>
+            <p class="album-indicacion">
+                ✦ Selecciona una fotografía para verla en grande ✦
+            </p>
 
-        </div>
+            <!-- VENTANA PARA AMPLIAR FOTOGRAFÍAS -->
 
-    </div>
+            <div
+                class="album-modal"
+                id="albumModal"
+                role="dialog"
+                aria-modal="true"
+                aria-label="Fotografía ampliada"
+                hidden>
 
-</section>
+                <div class="album-modal-contenido">
 
-</main>
+                    <button
+                        class="album-cerrar"
+                        id="albumCerrar"
+                        type="button"
+                        aria-label="Cerrar fotografía">
+                        ✕
+                    </button>
 
+                    <div class="album-modal-imagen">
 
-<!-- =====================================
-     PIE DE PÁGINA
+                        <button
+                            class="album-flecha"
+                            id="albumAnterior"
+                            type="button"
+                            aria-label="Fotografía anterior">
+                            ❮
+                        </button>
+
+                        <img
+                            id="albumImagenGrande"
+                            src=""
+                            alt="Fotografía ampliada">
+
+                        <button
+                            class="album-flecha"
+                            id="albumSiguiente"
+                            type="button"
+                            aria-label="Fotografía siguiente">
+                            ❯
+                        </button>
+
+                    </div>
+
+                    <h3 id="albumTitulo"></h3>
+
+                    <p id="albumDescripcion"></p>
+
+                    <span id="albumContador"></span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer>
+
+        <h2>🎓 Conoce el ITACE</h2>
+
+        <p>
+            Instituto Tamaulipeco de Capacitación
+            para el Empleo
+        </p>
+
+        <p>Plantel Reynosa, Tamaulipas</p>
+
+        <p>Educación • Tecnología • Valores • Futuro</p>
+
+        <p>
+            © 2026 | Proyecto escolar informativo no oficial
+        </p>
+
+    </footer>
+
+    <!-- BOTÓN VOLVER ARRIBA -->
+
+    <button
+        id="volverArriba"
+        class="oculto"
+        type="button"
+        aria-label="Volver al inicio"
+        title="Volver arriba">
+        ↑
+    </button>
+
+    <!-- JAVASCRIPT GENERAL DE TU PÁGINA -->
+
+    <script src="../js/script.js" defer></script>
+
+   <!-- =====================================
+     BOTÓN DE MÚSICA
 ===================================== -->
 
-<footer>
+<div class="reproductor-itace">
 
-    <h2>🎓 Conoce el ITACE</h2>
+    <audio id="musicaFondo" loop>
+        <source src="../audio/musica-itace.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+    </audio>
 
-    <p>
-        Instituto Tamaulipeco de Capacitación para el Empleo
-    </p>
+    <button
+        id="botonMusica"
+        class="boton-musica"
+        type="button"
+        aria-label="Reproducir música"
+        aria-pressed="false"
+        title="Reproducir música">
+        🎵
+    </button>
 
-    <p>Plantel Reynosa, Tamaulipas</p>
-
-    <p>Educación • Tecnología • Valores • Futuro</p>
-
-    <p>
-        © 2026 | Proyecto escolar informativo no oficial
-    </p>
-
-</footer>
-
-
-<!-- =====================================
-     JAVASCRIPT
-===================================== -->
-
-<script src="../js/script.js" defer></script>
-
-<!-- BOTÓN PARA VOLVER ARRIBA -->
-
-<button
-    id="volverArriba"
-    class="oculto"
-    type="button"
-    aria-label="Volver al inicio de la página"
-    title="Volver arriba"
->
-    ↑
-</button>
+</div>
 
 </body>
 </html>

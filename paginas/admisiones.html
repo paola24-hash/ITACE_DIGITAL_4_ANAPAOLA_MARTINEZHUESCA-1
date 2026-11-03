@@ -63,25 +63,21 @@
     <div class="enlaces-menu" id="enlacesMenu">
 
         <a href="../index.html#inicio">Inicio</a>
-
         <a href="conocenos.html#historia">Historia</a>
-
+        <a href="identidad.html#identidad">Identidad</a>
         <a href="oferta-educativa.html#carreras">Carreras</a>
-
+        <a href="docentes.html#docentes">Docentes</a>
+        <a href="proyectos.html#proyectos">Proyectos</a>
+        <a href="noticias.html#noticias">Noticias</a>
+        <a href="eventos.html#eventos">Eventos</a>
         <a href="vida-estudiantil.html#beneficios">Beneficios</a>
-
         <a href="vida-estudiantil.html#clubes">Clubes</a>
-
         <a href="vida-estudiantil.html#cursos">Cursos</a>
-
-        <a href="galeria.html#eventos">Vida Estudiantil</a>
-
+        <a href="galeria.html#galeria">Galería</a>
         <a href="instalaciones.html#instalaciones">Instalaciones</a>
-
         <a href="admisiones.html#inscripciones">Inscripciones</a>
-
+        <a href="preguntas.html#preguntas">Preguntas</a>
         <a href="contacto.html#contacto">Contacto</a>
-
     </div>
 
 </nav>
@@ -117,6 +113,20 @@
             para prepararte para tu proceso
             de ingreso al bachillerato tecnológico.
         </p>
+
+<!-- BOTONES DE ACCESO RÁPIDO -->
+
+<div class="admisiones-accesos">
+
+    <a href="#proceso-admision" class="admisiones-btn-primario">
+        ✨ Conocer el proceso
+    </a>
+
+    <a href="#documentos-admision" class="admisiones-btn-secundario">
+        📂 Ver documentos
+    </a>
+
+</div>
 
     </div>
 
@@ -161,7 +171,7 @@
          PASOS PARA INGRESAR
     ===================================== -->
 
-    <div class="admisiones-proceso">
+   <div class="admisiones-proceso" id="proceso-admision">
 
         <h3>📋 ¿Cómo puedo ingresar al ITACE?</h3>
 
@@ -280,7 +290,7 @@
          DOCUMENTOS
     ===================================== -->
 
-    <div class="admisiones-documentos">
+   <div class="admisiones-documentos" id="documentos-admision">
 
         <div class="documentos-encabezado">
 
@@ -349,6 +359,70 @@
             </div>
 
         </div>
+
+<!-- LISTA INTERACTIVA DE PREPARACIÓN -->
+
+<div class="admisiones-checklist">
+
+    <div class="checklist-encabezado">
+        <h4>✅ Organiza tus documentos</h4>
+        <p>
+            Marca los documentos que ya tienes preparados.
+            Esta lista es únicamente una ayuda personal.
+        </p>
+    </div>
+
+    <div class="checklist-progreso">
+        <div id="admisionesBarraProgreso"></div>
+    </div>
+
+    <p id="admisionesTextoProgreso"
+       class="checklist-contador"
+       aria-live="polite">
+        0 de 6 documentos preparados
+    </p>
+
+    <div class="checklist-opciones">
+
+        <label>
+            <input type="checkbox" class="admision-check">
+            <span>📄 Acta de nacimiento</span>
+        </label>
+
+        <label>
+            <input type="checkbox" class="admision-check">
+            <span>🪪 CURP</span>
+        </label>
+
+        <label>
+            <input type="checkbox" class="admision-check">
+            <span>🏫 Comprobante de estudios</span>
+        </label>
+
+        <label>
+            <input type="checkbox" class="admision-check">
+            <span>📸 Fotografías, si se solicitan</span>
+        </label>
+
+        <label>
+            <input type="checkbox" class="admision-check">
+            <span>🏠 Comprobante de domicilio, si se solicita</span>
+        </label>
+
+        <label>
+            <input type="checkbox" class="admision-check">
+            <span>👨‍👩‍👧 Datos del tutor, cuando correspondan</span>
+        </label>
+
+    </div>
+
+    <button id="reiniciarChecklist"
+            class="checklist-reiniciar"
+            type="button">
+        ↻ Reiniciar lista
+    </button>
+
+</div>
 
         <p class="documentos-aviso">
             ⚠️ Esta lista es orientativa.
@@ -464,10 +538,32 @@
     class="oculto"
     type="button"
     aria-label="Volver al inicio de la página"
-    title="Volver arriba"
->
+    title="Volver arriba">
     ↑
 </button>
+
+<!-- =====================================
+     BOTÓN DE MÚSICA
+===================================== -->
+
+<div class="reproductor-itace">
+
+    <audio id="musicaFondo" loop>
+       <source src="../audio/musica-itace.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+    </audio>
+
+    <button
+        id="botonMusica"
+        class="boton-musica"
+        type="button"
+        aria-label="Reproducir música"
+        aria-pressed="false"
+        title="Reproducir música">
+        🎵
+    </button>
+
+</div>
 
 </body>
 </html>

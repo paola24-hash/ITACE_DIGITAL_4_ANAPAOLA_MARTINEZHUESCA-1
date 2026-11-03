@@ -33,7 +33,7 @@
      MENÚ DE NAVEGACIÓN
 ===================================== -->
 
-<nav class="menu-principal">
+<nav class="menu-principal" aria-label="Menú principal">
 
     <a href="../index.html#inicio" class="marca-itace">
 
@@ -63,21 +63,20 @@
     <div class="enlaces-menu" id="enlacesMenu">
 
         <a href="../index.html#inicio">Inicio</a>
-
         <a href="conocenos.html#historia">Historia</a>
-
+        <a href="identidad.html#identidad">Identidad</a>
         <a href="oferta-educativa.html#carreras">Carreras</a>
-
+        <a href="docentes.html#docentes">Docentes</a>
+        <a href="proyectos.html#proyectos">Proyectos</a>
+        <a href="noticias.html#noticias">Noticias</a>
+        <a href="eventos.html#eventos">Eventos</a>
         <a href="vida-estudiantil.html#beneficios">Beneficios</a>
-
         <a href="vida-estudiantil.html#clubes">Clubes</a>
-
         <a href="vida-estudiantil.html#cursos">Cursos</a>
-
-        <a href="galeria.html#eventos">Vida Estudiantil</a>
-
-        <a href="#instalaciones">Instalaciones</a>
-
+        <a href="galeria.html#galeria">Galería</a>
+        <a href="instalaciones.html#instalaciones">Instalaciones</a>
+        <a href="admisiones.html#inscripciones">Inscripciones</a>
+        <a href="preguntas.html#preguntas">Preguntas</a>
         <a href="contacto.html#contacto">Contacto</a>
 
     </div>
@@ -88,171 +87,75 @@
 <main>
 
 <!-- =====================================
-     INSTALACIONES DEL ITACE
+     INSTALACIONES DEL PLANTEL
 ===================================== -->
 
 <section class="seccion" id="instalaciones">
 
-    <!-- ENCABEZADO DE LA SECCIÓN -->
+    <span class="subtitulo">
+        ESPACIOS PARA APRENDER
+    </span>
 
-    <div class="instalaciones-encabezado">
+    <h2>🏢 Nuestras instalaciones</h2>
 
-        <span class="subtitulo">
-            ✦ CONOCE NUESTRO PLANTEL ✦
-        </span>
+    <p>
+        Los espacios escolares permiten
+        complementar las clases con actividades
+        prácticas, proyectos, convivencia
+        y experiencias de aprendizaje.
+    </p>
 
-        <h2>🏫 Nuestras instalaciones</h2>
+ 
+<!-- =====================================
+     CARRUSEL 3D DE 25 INSTALACIONES
+===================================== -->
 
-        <p>
-            Conoce los espacios que forman parte
-            del ITACE Plantel Reynosa, donde los
-            estudiantes desarrollan sus actividades
-            académicas, técnicas y escolares.
-        </p>
+<div class="instalaciones-carrusel">
 
-    </div>
+    <div class="instalaciones-ventana">
 
-
-    <!-- =====================================
-         GALERÍA DE INSTALACIONES
-    ===================================== -->
-
-    <div class="instalaciones-grid">
-
-        <!-- INSTALACIÓN 1 -->
-
-        <article class="instalacion-card">
-
-            <div class="instalacion-imagen">
-
-                <img
-                    src="../img/foto12.jpg"
-                    alt="Instalaciones del ITACE Plantel Reynosa"
-                    loading="lazy">
-
-            </div>
-
-            <div class="instalacion-informacion">
-
-                <h3>🏫 Nuestro plantel</h3>
-
-                <p>
-                    Un espacio dedicado a la educación,
-                    la formación técnica y el desarrollo
-                    de nuestra comunidad estudiantil.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- INSTALACIÓN 2 -->
-
-        <article class="instalacion-card">
-
-            <div class="instalacion-imagen">
-
-                <img
-                    src="../img/foto13.jpg"
-                    alt="Espacios escolares del ITACE"
-                    loading="lazy">
-
-            </div>
-
-            <div class="instalacion-informacion">
-
-                <h3>📚 Espacios educativos</h3>
-
-                <p>
-                    Áreas donde los estudiantes
-                    participan en actividades de
-                    aprendizaje y convivencia.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- INSTALACIÓN 3 -->
-
-        <article class="instalacion-card">
-
-            <div class="instalacion-imagen">
-
-                <img
-                    src="../img/foto14.jpg"
-                    alt="Área del ITACE Plantel Reynosa"
-                    loading="lazy">
-
-            </div>
-
-            <div class="instalacion-informacion">
-
-                <h3>⚙️ Formación y práctica</h3>
-
-                <p>
-                    La educación técnica permite
-                    relacionar los conocimientos
-                    del aula con actividades prácticas.
-                </p>
-
-            </div>
-
-        </article>
-
-
-        <!-- INSTALACIÓN 4 -->
-
-        <article class="instalacion-card">
-
-            <div class="instalacion-imagen">
-
-                <img
-                    src="../img/foto15.jpg"
-                    alt="Otra vista de las instalaciones del ITACE"
-                    loading="lazy">
-
-            </div>
-
-            <div class="instalacion-informacion">
-
-                <h3>🌿 Comunidad estudiantil</h3>
-
-                <p>
-                    Los espacios del plantel forman
-                    parte de la experiencia educativa
-                    y la vida cotidiana de los alumnos.
-                </p>
-
-            </div>
-
-        </article>
+        <div
+            class="instalaciones-pista"
+            id="instalacionesPista">
+        </div>
 
     </div>
 
+    <!-- CONTROLES -->
 
-    <!-- =====================================
-         MENSAJE FINAL
-    ===================================== -->
+    <div class="instalaciones-controles">
 
-    <div class="instalaciones-mensaje">
+        <button
+            id="instalacionesAnterior"
+            class="instalaciones-flecha"
+            type="button"
+            aria-label="Ver instalaciones anteriores">
+            ❮
+        </button>
 
-        <h3>💗 Un espacio para aprender y crecer</h3>
+        <div
+            class="instalaciones-indicadores"
+            id="instalacionesIndicadores"
+            aria-label="Posición del carrusel">
+        </div>
 
-        <p>
-            En el ITACE Plantel Reynosa, cada espacio
-            forma parte de la preparación académica,
-            profesional y personal de nuestros estudiantes.
-        </p>
-
-        <a href="contacto.html#contacto"
-           class="boton-principal">
-            📍 Contáctanos
-        </a>
+        <button
+            id="instalacionesSiguiente"
+            class="instalaciones-flecha"
+            type="button"
+            aria-label="Ver instalaciones siguientes">
+            ❯
+        </button>
 
     </div>
+
+    <p class="instalaciones-ayuda">
+        ✨ Selecciona una fotografía para conocer
+        más sobre nuestras instalaciones.
+    </p>
+
+</div>
+
 
 </section>
 
@@ -268,7 +171,8 @@
     <h2>🎓 Conoce el ITACE</h2>
 
     <p>
-        Instituto Tamaulipeco de Capacitación para el Empleo
+        Instituto Tamaulipeco de Capacitación
+        para el Empleo
     </p>
 
     <p>Plantel Reynosa, Tamaulipas</p>
@@ -283,22 +187,45 @@
 
 
 <!-- =====================================
-     JAVASCRIPT
+     BOTÓN VOLVER ARRIBA
 ===================================== -->
-
-<script src="../js/script.js" defer></script>
-
-<!-- BOTÓN PARA VOLVER ARRIBA -->
 
 <button
     id="volverArriba"
     class="oculto"
     type="button"
     aria-label="Volver al inicio de la página"
-    title="Volver arriba"
->
+    title="Volver arriba">
     ↑
 </button>
 
+
+<!-- =====================================
+     JAVASCRIPT
+===================================== -->
+
+<script src="../js/script.js" defer></script>
+<!-- =====================================
+     BOTÓN DE MÚSICA
+===================================== -->
+
+<div class="reproductor-itace">
+
+    <audio id="musicaFondo" loop>
+        <source src="../audio/musica-itace.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+    </audio>
+
+    <button
+        id="botonMusica"
+        class="boton-musica"
+        type="button"
+        aria-label="Reproducir música"
+        aria-pressed="false"
+        title="Reproducir música">
+        🎵
+    </button>
+
+</div>
 </body>
 </html>
