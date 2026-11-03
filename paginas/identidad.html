@@ -25,51 +25,95 @@
     </header>
 
     <!-- MENÚ DE NAVEGACIÓN -->
-    <nav class="menu-principal" aria-label="Menú principal">
+    
+<!-- MENÚ PRINCIPAL - CARPETA PAGINAS -->
 
-        <a href="../index.html#inicio" class="marca-itace">
+<nav class="menu-principal" aria-label="Menú principal">
 
-            <span class="marca-icono">🎓</span>
+    <a href="../index.html#inicio" class="marca-itace">
+        <span class="marca-icono">🎓</span>
+        <span class="marca-texto">
+            <strong>ITACE</strong>
+            <small>Nuestra Historia, Nuestro Futuro</small>
+        </span>
+    </a>
 
-            <span class="marca-texto">
-                <strong>ITACE</strong>
-                <small>Nuestra Historia, Nuestro Futuro</small>
-            </span>
+    <button
+        class="menu-hamburguesa"
+        id="menuHamburguesa"
+        type="button"
+        aria-label="Abrir menú"
+        aria-controls="enlacesMenu"
+        aria-expanded="false">
+        ☰
+    </button>
 
-        </a>
+    <div class="enlaces-menu" id="enlacesMenu">
 
-        <button
-            class="menu-hamburguesa"
-            id="menuHamburguesa"
-            type="button"
-            aria-label="Abrir menú"
-            aria-controls="enlacesMenu"
-            aria-expanded="false">
-            ☰
-        </button>
+        <a href="../index.html#inicio">Inicio</a>
 
-        <div class="enlaces-menu" id="enlacesMenu">
+        <!-- INSTITUCIÓN -->
+        <div class="menu-grupo">
+            <button class="menu-desplegable" type="button"
+                    aria-expanded="false">
+                Institución <span>⌄</span>
+            </button>
 
-            <a href="../index.html#inicio">Inicio</a>
-            <a href="conocenos.html#historia">Historia</a>
-            <a href="identidad.html#identidad">Identidad</a>
-            <a href="oferta-educativa.html#carreras">Carreras</a>
-            <a href="docentes.html#docentes">Docentes</a>
-            <a href="proyectos.html#proyectos">Proyectos</a>
-            <a href="noticias.html#noticias">Noticias</a>
-            <a href="eventos.html#eventos">Eventos</a>
-            <a href="vida-estudiantil.html#beneficios">Beneficios</a>
-            <a href="vida-estudiantil.html#clubes">Clubes</a>
-            <a href="vida-estudiantil.html#cursos">Cursos</a>
-            <a href="galeria.html#galeria">Galería</a>
-            <a href="instalaciones.html#instalaciones">Instalaciones</a>
-            <a href="admisiones.html#inscripciones">Inscripciones</a>
-            <a href="preguntas.html#preguntas">Preguntas</a>
-            <a href="contacto.html#contacto">Contacto</a>
-
+            <div class="submenu-itace">
+                <a href="conocenos.html#historia">Historia</a>
+                <a href="identidad.html#identidad">Identidad</a>
+                <a href="instalaciones.html#instalaciones">Instalaciones</a>
+                <a href="contacto.html#contacto">Contacto</a>
+            </div>
         </div>
 
-    </nav>
+        <!-- ACADÉMICO -->
+        <div class="menu-grupo">
+            <button class="menu-desplegable" type="button"
+                    aria-expanded="false">
+                Académico <span>⌄</span>
+            </button>
+
+            <div class="submenu-itace">
+                <a href="oferta-educativa.html#carreras">Carreras</a>
+                <a href="docentes.html#docentes">Docentes</a>
+                <a href="proyectos.html#proyectos">Proyectos</a>
+            </div>
+        </div>
+
+        <!-- VIDA ESTUDIANTIL -->
+        <div class="menu-grupo">
+            <button class="menu-desplegable" type="button"
+                    aria-expanded="false">
+                Vida estudiantil <span>⌄</span>
+            </button>
+
+            <div class="submenu-itace">
+                <a href="vida-estudiantil.html#beneficios">Beneficios</a>
+                <a href="vida-estudiantil.html#clubes">Clubes</a>
+                <a href="vida-estudiantil.html#cursos">Cursos</a>
+                <a href="galeria.html#galeria">Galería</a>
+            </div>
+        </div>
+
+        <!-- MÁS -->
+        <div class="menu-grupo">
+            <button class="menu-desplegable" type="button"
+                    aria-expanded="false">
+                Más <span>⌄</span>
+            </button>
+
+            <div class="submenu-itace">
+                <a href="noticias.html#noticias">Noticias</a>
+                <a href="eventos.html#eventos">Eventos</a>
+                <a href="admisiones.html#inscripciones">Inscripciones</a>
+                <a href="preguntas.html#preguntas">Preguntas</a>
+            </div>
+        </div>
+
+    </div>
+</nav>
+
 
     <main>
 

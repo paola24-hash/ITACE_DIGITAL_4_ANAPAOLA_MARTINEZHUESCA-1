@@ -728,7 +728,7 @@ document.addEventListener("DOMContentLoaded", function () {
             semestres: "1.º y 5.º",
             formacion: "Licenciatura en Pedagogía, maestría en Educación Media Superior o Docencia (por confirmar) y Doctorado en Educación",
             antiguedad: "5 años",
-            salon: "No especificado"
+            salon: "A-8"
         },
 
         {
@@ -738,7 +738,7 @@ document.addEventListener("DOMContentLoaded", function () {
             semestres: "1.º y 3.º",
             formacion: "Maestría (área no especificada)",
             antiguedad: "33 años, según los datos proporcionados",
-            salon: "B-3 / A-6 (por confirmar)"
+            salon: "A-6"
         },
 
         {
@@ -788,7 +788,7 @@ document.addEventListener("DOMContentLoaded", function () {
             semestres: "1.º y 3.º",
             formacion: "Técnica en Informática, Ingeniería en Sistemas Computacionales y Maestría en Educación",
             antiguedad: "4 años",
-            salon: "No especificado"
+            salon: "Laboratorio 3"
         },
 
         {
@@ -798,7 +798,7 @@ document.addEventListener("DOMContentLoaded", function () {
             semestres: "3.º; club para 1.º, 2.º y 3.º",
             formacion: "Ingeniería Industrial y Administración",
             antiguedad: "13 años",
-            salon: "No especificado"
+            salon: "A-2"
         },
 
         {
@@ -808,7 +808,7 @@ document.addEventListener("DOMContentLoaded", function () {
             semestres: "5.º",
             formacion: "Licenciatura en Contaduría",
             antiguedad: "No especificada",
-            salon: "No especificado"
+            salon: "A-4"
         },
 
         {
@@ -818,7 +818,7 @@ document.addEventListener("DOMContentLoaded", function () {
             semestres: "3.º y 5.º",
             formacion: "Ingeniería Industrial en Sistemas y Maestría en Educación",
             antiguedad: "No especificada",
-            salon: "No especificado"
+            salon: "A-1"
         },
 
         {
@@ -828,7 +828,7 @@ document.addEventListener("DOMContentLoaded", function () {
             semestres: "1.º, 3.º y 5.º",
             formacion: "Licenciatura en Administración de Empresas y carrera técnica en Ebanistería",
             antiguedad: "No especificada",
-            salon: "No especificado"
+            salon: "C-9"
         },
 
         {
@@ -838,7 +838,7 @@ document.addEventListener("DOMContentLoaded", function () {
             semestres: "1.º, 3.º y 5.º",
             formacion: "Biología, con especialización en Física y Química",
             antiguedad: "No especificada",
-            salon: "No especificado"
+            salon: "A-7"
         },
 
         {
@@ -858,7 +858,7 @@ document.addEventListener("DOMContentLoaded", function () {
             semestres: "No especificados",
             formacion: "Ingeniería Industrial, Licenciatura en Matemáticas, Maestría en Educación e Innovación Educativa; estudios de Doctorado en Educación en curso, según la información proporcionada",
             antiguedad: "No especificada",
-            salon: "No especificado"
+            salon: "A-5"
         },
 
         {
@@ -868,7 +868,7 @@ document.addEventListener("DOMContentLoaded", function () {
             semestres: "1.º, 3.º y 5.º",
             formacion: "Licenciatura en Información Administrativa y Maestría en Ciencias de la Enseñanza",
             antiguedad: "No especificada",
-            salon: "No especificado"
+            salon: "Laboratorio 2"
         },
 
         {
@@ -884,7 +884,7 @@ document.addEventListener("DOMContentLoaded", function () {
         {
             nombre: "Nohemí Quintanilla Arcos",
             academia: "Por confirmar",
-            materias: "No especificadas",
+            materias: "Prefecta",
             semestres: "No especificados",
             formacion: "No especificada",
             antiguedad: "No especificada",
@@ -938,7 +938,7 @@ document.addEventListener("DOMContentLoaded", function () {
     semestres: "3.º",
     formacion: "No especificada",
     antiguedad: "32 años",
-    salon: "B2"
+    salon: "No especificado"
 },
 
 {
@@ -979,9 +979,17 @@ document.addEventListener("DOMContentLoaded", function () {
     formacion: "Ingeniería Industrial, carrera técnica en Refrigeración y Climatización y Maestría en Educación",
     antiguedad: "No especificada",
     salon: "No especificado"
+},
+
+{
+    nombre: "Aarón Espinoza Gallegos",
+    academia: "Prefectura",
+    materias: "Banda de Guerra",
+    semestres: "1.º, 3.º y 5.º",
+    formacion: "Licenciatura en Ciencias de la Educación",
+    antiguedad: "33 años",
+    salon: "No especificado"
 }
-
-
     ];
 
 /* =====================================
@@ -2600,6 +2608,64 @@ document.addEventListener("DOMContentLoaded", function () {
 
         });
 
+    });
+
+});
+
+/* =====================================
+   MENÚ DESPLEGABLE ITACE
+===================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const grupos = document.querySelectorAll(".menu-grupo");
+
+    function cerrarSubmenus() {
+        grupos.forEach(function (grupo) {
+            grupo.classList.remove("abierto");
+
+            const boton = grupo.querySelector(".menu-desplegable");
+
+            if (boton) {
+                boton.setAttribute("aria-expanded", "false");
+            }
+        });
+    }
+
+    grupos.forEach(function (grupo) {
+
+        const boton = grupo.querySelector(".menu-desplegable");
+
+        if (!boton) return;
+
+        boton.addEventListener("click", function (evento) {
+            evento.stopPropagation();
+
+            const estabaAbierto = grupo.classList.contains("abierto");
+
+            cerrarSubmenus();
+
+            if (!estabaAbierto) {
+                grupo.classList.add("abierto");
+                boton.setAttribute("aria-expanded", "true");
+            }
+        });
+    });
+
+    document.addEventListener("click", function (evento) {
+        if (!evento.target.closest(".menu-grupo")) {
+            cerrarSubmenus();
+        }
+    });
+
+    document.addEventListener("keydown", function (evento) {
+        if (evento.key === "Escape") {
+            cerrarSubmenus();
+        }
+    });
+
+    document.querySelectorAll(".submenu-itace a").forEach(function (enlace) {
+        enlace.addEventListener("click", cerrarSubmenus);
     });
 
 });

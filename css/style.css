@@ -108,6 +108,60 @@ input:focus-visible {
     border-bottom: 3px solid var(--guinda);
     box-shadow: 0 4px 18px #570f2c1f;
 }
+
+/* =====================================
+   CORRECCIÓN DEL MENÚ ITACE
+===================================== */
+
+@media (min-width: 769px) {
+
+    .menu-principal {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .menu-principal .enlaces-menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        flex-wrap: nowrap;
+        gap: 8px;
+        width: auto;
+        min-width: 0;
+    }
+
+    .menu-principal .menu-grupo {
+        position: relative;
+        width: auto;
+        flex: 0 0 auto;
+    }
+
+    .menu-principal .menu-desplegable {
+        width: auto;
+        white-space: nowrap;
+        padding: 10px 12px;
+    }
+
+    .menu-principal .enlaces-menu > a {
+        white-space: nowrap;
+    }
+
+    .menu-principal .submenu-itace {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: max-content;
+        min-width: 190px;
+        max-width: 260px;
+    }
+}
+
 /* ==========================================
    4. LOGOTIPO Y NOMBRE DEL PLANTEL
 ========================================== */
@@ -18916,5 +18970,109 @@ button:focus-visible {
         width: 32px;
         height: 32px;
         font-size: 18px;
+    }
+}
+
+/* =====================================
+   MENÚ ITACE DESPLEGABLE POR CLIC
+===================================== */
+
+.menu-principal {
+    overflow: visible;
+}
+
+.menu-principal .enlaces-menu {
+    align-items: center;
+}
+
+.menu-grupo {
+    position: relative;
+}
+
+.menu-desplegable {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 12px 14px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.menu-desplegable:hover,
+.menu-grupo.abierto > .menu-desplegable {
+    background: #a8476e;
+    color: white;
+}
+
+.menu-desplegable span {
+    transition: transform 0.3s;
+}
+
+.menu-grupo.abierto > .menu-desplegable span {
+    transform: rotate(180deg);
+}
+
+.submenu-itace {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1100;
+    min-width: 210px;
+    padding: 8px;
+    border-radius: 12px;
+    background: #fffafc;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.16);
+}
+
+.menu-grupo.abierto > .submenu-itace {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-principal .submenu-itace a {
+    display: block;
+    padding: 11px 14px;
+    border-radius: 7px;
+    color: #742443;
+    text-decoration: none;
+}
+
+.menu-principal .submenu-itace a:hover {
+    background: #f8e4ee;
+    color: #742443;
+}
+
+/* MENÚ EN CELULARES */
+
+@media (max-width: 768px) {
+
+    .menu-principal .enlaces-menu {
+        align-items: stretch;
+    }
+
+    .menu-grupo {
+        width: 100%;
+    }
+
+    .menu-desplegable {
+        width: 100%;
+        text-align: left;
+    }
+
+    .submenu-itace {
+        position: static;
+        width: 100%;
+        min-width: 0;
+        margin: 4px 0 8px;
+        background: #fff1f7;
+        box-shadow: none;
     }
 }
