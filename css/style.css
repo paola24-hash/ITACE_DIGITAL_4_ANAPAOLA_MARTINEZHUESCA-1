@@ -4020,6 +4020,421 @@ input:focus-visible {
     color: white;
     border-color: #742443;
 }
+        /* =====================================
+           GALERÍA ITACE
+        ===================================== */
+
+        .album-itace {
+            padding: 65px 5%;
+            background: linear-gradient(
+                180deg,
+                #fff8fb,
+                #ffeef5,
+                #fff9fc
+            );
+        }
+
+        .album-encabezado {
+            text-align: center;
+            max-width: 850px;
+            margin: 0 auto 35px;
+        }
+
+        .album-etiqueta {
+            display: inline-block;
+            color: #b64d7c;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .album-encabezado h1 {
+            color: #8d315d;
+            font-size: clamp(28px, 4vw, 44px);
+            margin-bottom: 18px;
+        }
+
+        .album-encabezado p {
+            color: #76586b;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .album-decoracion {
+            color: #d66d9c;
+            font-size: 25px;
+            margin-top: 20px;
+        }
+
+        /* FILTROS */
+
+        .album-filtros {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 35px;
+        }
+
+        .filtro-album {
+            border: 2px solid #e6a5c4;
+            border-radius: 30px;
+            background: white;
+            color: #8d315d;
+            padding: 11px 22px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .filtro-album:hover,
+        .filtro-album.activo {
+            background: #b8497d;
+            border-color: #b8497d;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* GALERÍA */
+
+        .album-itace .album-galeria {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 22px;
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        .album-itace .album-foto {
+            min-width: 0;
+            margin: 0;
+            border-radius: 20px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 7px 22px #7e2f571f;
+            transition: 0.3s;
+        }
+
+        .album-itace .album-foto:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 14px 30px #7e2f5733;
+        }
+
+        .album-itace .album-abrir {
+            display: block;
+            width: 100%;
+            padding: 0;
+            border: 0;
+            background: #fce4ee;
+            cursor: zoom-in;
+            overflow: hidden;
+        }
+
+        .album-itace .album-abrir img {
+            display: block;
+            width: 100%;
+            height: 205px;
+            object-fit: cover;
+            transition: transform 0.4s;
+        }
+
+        .album-itace .album-foto:hover img {
+            transform: scale(1.07);
+        }
+
+        .album-itace .album-foto figcaption {
+            padding: 17px;
+        }
+
+        .album-itace .album-foto figcaption span {
+            color: #b8497d;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .album-itace .album-foto figcaption h3 {
+            color: #813657;
+            margin: 8px 0;
+            font-size: 17px;
+        }
+
+        .album-itace .album-foto figcaption p {
+            color: #806b77;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+
+        /* VER MÁS */
+
+        .album-acciones {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        .album-ver-mas {
+            padding: 14px 30px;
+            border: none;
+            border-radius: 30px;
+            background: #b8497d;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .album-ver-mas:hover {
+            background: #8d315d;
+            transform: translateY(-3px);
+        }
+
+        .album-vacio,
+        .album-indicacion {
+            text-align: center;
+            margin-top: 25px;
+            color: #995675;
+        }
+
+        /* VENTANA DE FOTOGRAFÍA */
+
+        #albumModal {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
+            background: rgba(32, 13, 29, 0.90);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        #albumModal .album-modal-contenido {
+            position: relative;
+            width: min(900px, 100%);
+            max-height: 95vh;
+            overflow-y: auto;
+            padding: 25px;
+            border-radius: 22px;
+            background: #fff7fb;
+            text-align: center;
+        }
+
+        #albumModal .album-cerrar {
+            position: absolute;
+            top: 10px;
+            right: 13px;
+            z-index: 2;
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50%;
+            background: #b8497d;
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        #albumModal .album-modal-imagen {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 35px;
+        }
+
+        #albumModal #albumImagenGrande {
+            width: min(700px, 100%);
+            max-width: calc(100% - 100px);
+            max-height: 65vh;
+            object-fit: contain;
+            border-radius: 14px;
+        }
+
+        #albumModal .album-flecha {
+            flex-shrink: 0;
+            width: 42px;
+            height: 42px;
+            border: none;
+            border-radius: 50%;
+            background: #b8497d;
+            color: white;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        #albumModal h3 {
+            margin-top: 18px;
+            color: #813657;
+        }
+
+        #albumModal p {
+            margin: 8px 0;
+            color: #806b77;
+        }
+
+        #albumContador {
+            color: #b8497d;
+            font-weight: bold;
+        }
+
+        /* ELEMENTOS OCULTOS */
+
+        .album-itace .album-foto[hidden],
+        #albumVacio[hidden],
+        #albumVerMas[hidden],
+        #albumModal[hidden] {
+            display: none !important;
+        }
+
+        /* TABLETAS */
+
+        @media (max-width: 1050px) {
+            .album-itace .album-galeria {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 800px) {
+            .album-itace .album-galeria {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        /* CELULARES */
+
+        @media (max-width: 550px) {
+            .album-itace {
+                padding: 40px 15px;
+            }
+
+            .album-itace .album-galeria {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .album-itace .album-abrir img {
+                height: 240px;
+            }
+
+            .filtro-album {
+                padding: 9px 14px;
+                font-size: 13px;
+            }
+
+            #albumModal {
+                padding: 10px;
+            }
+
+            #albumModal .album-modal-contenido {
+                padding: 15px;
+            }
+
+            #albumModal .album-flecha {
+                width: 34px;
+                height: 34px;
+                font-size: 17px;
+            }
+
+            #albumModal #albumImagenGrande {
+                max-width: calc(100% - 80px);
+            }
+        }
+  
+/* =====================================
+   GALERÍA DE VIDEOS ITACE
+===================================== */
+
+.galeria-videos {
+    margin: 70px auto 20px;
+    max-width: 1400px;
+}
+
+.videos-encabezado {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.videos-encabezado h2 {
+    color: #8d315d;
+    font-size: clamp(25px, 4vw, 36px);
+    margin-bottom: 15px;
+}
+
+.videos-encabezado p {
+    color: #76586b;
+    line-height: 1.7;
+}
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.video-tarjeta {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 7px 22px rgba(126, 47, 87, 0.12);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.video-tarjeta:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 30px rgba(126, 47, 87, 0.20);
+}
+
+.video-tarjeta video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    background: #23141e;
+}
+
+.video-informacion {
+    padding: 20px;
+}
+
+.video-informacion span {
+    color: #b8497d;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.video-informacion h3 {
+    color: #813657;
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.video-informacion p {
+    color: #806b77;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* TABLETAS */
+
+@media (max-width: 900px) {
+    .videos-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+    .galeria-videos {
+        margin-top: 50px;
+    }
+
+    .videos-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
 
 /* ==========================================
    57. CUADRÍCULA DE FOTOGRAFÍAS

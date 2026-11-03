@@ -2554,3 +2554,52 @@ document.addEventListener("DOMContentLoaded", () => {
 
     actualizarFlechas();
 });
+
+/* =====================================
+   PAUSAR MÚSICA AL REPRODUCIR VIDEOS
+   GALERÍA ITACE
+===================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const videos = document.querySelectorAll(
+        ".galeria-videos video"
+    );
+
+    const musica = document.getElementById("musicaFondo");
+    const botonMusica = document.getElementById("botonMusica");
+
+    videos.forEach(function (video) {
+
+        video.addEventListener("play", function () {
+
+            // Pausar los demás videos
+            videos.forEach(function (otroVideo) {
+                if (otroVideo !== video) {
+                    otroVideo.pause();
+                }
+            });
+
+            // Pausar la música de fondo
+            if (musica && !musica.paused) {
+                musica.pause();
+            }
+
+            // Actualizar el botón de música
+            if (botonMusica && musica) {
+                botonMusica.setAttribute(
+                    "aria-pressed", "false"
+                );
+
+                botonMusica.setAttribute(
+                    "aria-label", "Reproducir música"
+                );
+
+                botonMusica.title = "Reproducir música";
+            }
+
+        });
+
+    });
+
+});
