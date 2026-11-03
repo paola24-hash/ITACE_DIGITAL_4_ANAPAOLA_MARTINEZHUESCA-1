@@ -3474,65 +3474,319 @@ input:focus-visible {
     }
 }
 
+
 /* ==========================================
    52. EVENTOS ESCOLARES
 ========================================== */
+
+/* BORDE SUPERIOR */
 
 #eventos,
 #eventos-escolares {
     border-top: 5px solid #742443;
 }
 
-.eventos-grid,
-.grid-eventos,
-.proximos-eventos-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
-    margin-top: 25px;
-}
+/* ==========================================
+   PRESENTACIÓN DE EVENTOS
+========================================== */
 
-.evento-card,
-.tarjeta-evento {
+#eventos .eventos-presentacion {
     display: flex;
-    flex-direction: column;
-    min-width: 0;
-    overflow: hidden;
-    background: #fffdf8;
-    border: 1px solid #e6cfb3;
-    border-bottom: 4px solid #742443;
-    border-radius: 20px;
-    box-shadow: 0 7px 20px #570f2c1f;
-    transition: 0.3s ease;
+    align-items: center;
+    gap: 25px;
+    padding: 30px;
+    margin: 35px auto;
+    max-width: 1100px;
+
+    background: #fff8f1;
+    border: 2px solid #ead7bd;
+    border-radius: 22px;
+    box-shadow: 0 7px 20px rgba(87, 15, 44, 0.08);
 }
 
-.evento-card:hover,
-.tarjeta-evento:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 28px #570f2c30;
+#eventos .eventos-presentacion-icono {
+    font-size: 55px;
+    flex-shrink: 0;
 }
 
-.evento-card img,
-.tarjeta-evento img {
-    display: block;
-    width: 100%;
-    height: 215px;
-    object-fit: cover;
-}
-
-.evento-card h3,
-.tarjeta-evento h3 {
+#eventos .eventos-presentacion-texto h3 {
     color: #742443;
-    font-size: 21px;
+    font-size: 25px;
+    margin: 10px 0;
 }
 
-.evento-card p,
-.tarjeta-evento p {
-    color: #40343a;
+#eventos .eventos-presentacion-texto p {
+    color: #55464d;
     font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+/* ==========================================
+   ENCABEZADO DE EVENTOS DESTACADOS
+========================================== */
+
+#eventos .eventos-destacados {
+    max-width: 1250px;
+    margin: 60px auto;
+}
+
+#eventos .eventos-destacados-encabezado {
+    text-align: center;
+    max-width: 850px;
+    margin: 0 auto 35px;
+}
+
+#eventos .eventos-destacados-encabezado span {
+    color: #a47736;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+#eventos .eventos-destacados-encabezado h3 {
+    color: #742443;
+    font-size: clamp(25px, 3vw, 34px);
+    margin: 12px 0;
+}
+
+#eventos .eventos-destacados-encabezado p {
+    color: #65575e;
+    font-size: 16px;
     line-height: 1.7;
 }
 
+/* ==========================================
+   CONTENEDOR DE LOS CUATRO EVENTOS
+========================================== */
+
+#eventos .eventos-grid-reales {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 35px auto;
+    align-items: stretch;
+}
+
+/* ==========================================
+   TARJETAS DE EVENTOS
+========================================== */
+
+#eventos .eventos-grid-reales .evento-card {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+
+    background: #ffffff;
+    border: 1px solid #e8d8c9;
+    border-bottom: 4px solid #742443;
+    border-radius: 22px;
+    overflow: hidden;
+
+    text-align: left;
+    box-shadow: 0 8px 25px rgba(88, 24, 51, 0.12);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+#eventos .eventos-grid-reales .evento-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(88, 24, 51, 0.20);
+}
+
+/* ==========================================
+   IMÁGENES DE LOS EVENTOS
+========================================== */
+
+#eventos .eventos-grid-reales .evento-imagen {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    object-position: center;
+    flex-shrink: 0;
+}
+
+/* ==========================================
+   CONTENIDO DE LAS TARJETAS
+========================================== */
+
+#eventos .evento-contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex: 1;
+    gap: 0;
+    padding: 24px;
+}
+
+/* FECHAS */
+
+#eventos .evento-fecha {
+    display: inline-block;
+    align-self: flex-start;
+
+    background: #f5e9ed;
+    color: #742443;
+
+    border-radius: 25px;
+    padding: 8px 14px;
+    margin-bottom: 14px;
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* ICONOS */
+
+#eventos .eventos-grid-reales .evento-icono {
+    font-size: 30px;
+    line-height: 1.2;
+    margin: 0 0 12px;
+    padding: 0;
+}
+
+/* TÍTULOS */
+
+#eventos .eventos-grid-reales .evento-card h4 {
+    color: #742443;
+    font-size: 21px;
+    line-height: 1.4;
+
+    margin: 0 0 16px;
+    padding: 0;
+    text-align: left;
+}
+
+/* DESCRIPCIONES */
+
+#eventos .eventos-grid-reales .evento-card p {
+    color: #574c51;
+    font-size: 15px;
+    line-height: 1.75;
+
+    margin: 0 0 13px;
+    padding: 0;
+    text-align: left;
+}
+
+/* ETIQUETAS */
+
+#eventos .eventos-grid-reales .evento-etiqueta {
+    display: inline-block;
+    align-self: flex-start;
+
+    margin: auto 0 18px;
+    padding: 8px 13px;
+
+    background: #fff1da;
+    color: #80561f;
+
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* ==========================================
+   BOTONES DE FACEBOOK
+========================================== */
+
+#eventos .evento-enlace {
+    display: block;
+    width: 100%;
+
+    background: #742443;
+    color: #ffffff;
+
+    border-radius: 25px;
+    padding: 14px 18px;
+
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: background 0.3s ease;
+}
+
+#eventos .evento-enlace:hover {
+    background: #a43b60;
+    color: #ffffff;
+}
+
+#eventos .evento-enlace:focus-visible {
+    outline: 3px solid #c99a50;
+    outline-offset: 3px;
+}
+
+/* ==========================================
+   DISEÑO RESPONSIVO - TABLETAS
+========================================== */
+
+@media (max-width: 850px) {
+
+    #eventos .eventos-grid-reales {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    #eventos .evento-imagen {
+        height: 210px;
+    }
+
+    #eventos .evento-contenido {
+        padding: 18px;
+    }
+
+}
+
+/* ==========================================
+   DISEÑO RESPONSIVO - CELULARES
+========================================== */
+
+@media (max-width: 650px) {
+
+    #eventos .eventos-presentacion {
+        flex-direction: column;
+        text-align: center;
+        padding: 22px;
+    }
+
+    #eventos .eventos-presentacion-icono {
+        font-size: 45px;
+    }
+
+    #eventos .eventos-destacados {
+        margin: 40px auto;
+    }
+
+    #eventos .eventos-grid-reales {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    #eventos .evento-imagen {
+        height: 230px;
+    }
+
+    #eventos .evento-contenido {
+        padding: 20px;
+    }
+
+    #eventos .eventos-grid-reales .evento-card h4 {
+        font-size: 19px;
+    }
+
+}
 /* ==========================================
    53. DISEÑO RESPONSIVO
 ========================================== */
