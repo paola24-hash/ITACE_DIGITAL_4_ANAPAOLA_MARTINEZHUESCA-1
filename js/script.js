@@ -2019,178 +2019,100 @@ const instalaciones = [
     // FOTOGRAFÍA 1
     {
         imagen: "../img/instalacion1.jpg",
-        nombre: "Nombre del lugar 1",
-        descripcion: "Escribe aquí qué es este lugar y para qué se utiliza."
+        nombre: "Entrada principal del ITACE",
+        descripcion: "Por el lado izquierdo entratodo el alumnado y el lado derecho es la entrada al estacionamiento."
     },
 
     // FOTOGRAFÍA 2
     {
         imagen: "../img/instalacion2.jpg",
-        nombre: "Nombre del lugar 2",
-        descripcion: "Escribe aquí la descripción de este espacio."
+        nombre: "Explanada del plantel",
+        descripcion: "Aqui hacemos nuestros eventos y donde convivimos todos los alumnos."
     },
 
     // FOTOGRAFÍA 3
     {
         imagen: "../img/instalacion3.jpg",
-        nombre: "Nombre del lugar 3",
-        descripcion: "Explica qué actividades se realizan aquí."
+        nombre: "Area de orientacion",
+        descripcion: "Aqui es donde se realizan las orientaciones académicas y personales."
     },
 
     // FOTOGRAFÍA 4
     {
         imagen: "../img/instalacion4.jpg",
-        nombre: "Nombre del lugar 4",
-        descripcion: "Escribe aquí la descripción."
+        nombre: "Area de prefectura",
+        descripcion: "Aqui es donde podran encontrar a nuestros prefectos."
     },
 
     // FOTOGRAFÍA 5
     {
         imagen: "../img/instalacion5.jpg",
-        nombre: "Nombre del lugar 5",
-        descripcion: "Escribe aquí la descripción."
+        nombre: "Area directiva",
+        descripcion: "Aqui es donde se encuentran los directivos del plantel y control escolar."
     },
 
     // FOTOGRAFÍA 6
     {
         imagen: "../img/instalacion6.jpg",
-        nombre: "Nombre del lugar 6",
-        descripcion: "Escribe aquí la descripción."
+        nombre: "Plaza del estudiante",
+        descripcion: "Aqui es donde conviven algunos cuantos alumnos."
     },
 
     // FOTOGRAFÍA 7
     {
         imagen: "../img/instalacion7.jpg",
-        nombre: "Nombre del lugar 7",
-        descripcion: "Escribe aquí la descripción."
+        nombre: "Jardin Botanico del ITACE",
+        descripcion: "Es un jardin creado por docente del plantel con especies de Tamaulipas."
     },
 
     // FOTOGRAFÍA 8
     {
         imagen: "../img/instalacion8.jpg",
-        nombre: "Nombre del lugar 8",
-        descripcion: "Escribe aquí la descripción."
+        nombre: "Cancha de basquetbol",
+        descripcion: "Esta es nuestra cancha utilizada para varios deportes en si."
     },
 
     // FOTOGRAFÍA 9
     {
         imagen: "../img/instalacion9.jpg",
-        nombre: "Nombre del lugar 9",
-        descripcion: "Escribe aquí la descripción."
+        nombre: "Comedor escolar",
+        descripcion: "Es el lugar donde los alumnos se alimentan durante el día."
     },
 
     // FOTOGRAFÍA 10
     {
         imagen: "../img/instalacion10.jpg",
-        nombre: "Nombre del lugar 10",
-        descripcion: "Escribe aquí la descripción."
+        nombre: "Area del A",
+        descripcion: "Aqui es donde se encuentran los salones del A."
     },
 
     // FOTOGRAFÍA 11
     {
         imagen: "../img/instalacion11.jpg",
-        nombre: "Nombre del lugar 11",
-        descripcion: "Escribe aquí la descripción."
+        nombre: "Cuarto de banda de guerra",
+        descripcion: "Aqui se encuentra el cuarto donde se almacena el equipo de la banda."
     },
 
     // FOTOGRAFÍA 12
     {
         imagen: "../img/instalacion12.jpg",
-        nombre: "Nombre del lugar 12",
-        descripcion: "Escribe aquí la descripción."
+        nombre: "Salon que Automotriz",
+        descripcion: "Aqui es donde se imparten las clases de Mantenimiento Automotriz."
     },
 
     // FOTOGRAFÍA 13
     {
         imagen: "../img/instalacion13.jpg",
-        nombre: "Nombre del lugar 13",
-        descripcion: "Escribe aquí la descripción."
+        nombre: "Laboratorio 5",
+        descripcion: "Aqui se imparten las clases de algunos modulos como Programacion."
     },
 
     // FOTOGRAFÍA 14
     {
         imagen: "../img/instalacion14.jpg",
-        nombre: "Nombre del lugar 14",
-        descripcion: "Escribe aquí la descripción."
-    },
-
-    // FOTOGRAFÍA 15
-    {
-        imagen: "../img/instalacion15.jpg",
-        nombre: "Nombre del lugar 15",
-        descripcion: "Escribe aquí la descripción."
-    },
-
-    // FOTOGRAFÍA 16
-    {
-        imagen: "../img/instalacion16.jpg",
-        nombre: "Nombre del lugar 16",
-        descripcion: "Escribe aquí la descripción."
-    },
-
-    // FOTOGRAFÍA 17
-    {
-        imagen: "../img/instalacion17.jpg",
-        nombre: "Nombre del lugar 17",
-        descripcion: "Escribe aquí la descripción."
-    },
-
-    // FOTOGRAFÍA 18
-    {
-        imagen: "../img/instalacion18.jpg",
-        nombre: "Nombre del lugar 18",
-        descripcion: "Escribe aquí la descripción."
-    },
-
-    // FOTOGRAFÍA 19
-    {
-        imagen: "../img/instalacion19.jpg",
-        nombre: "Nombre del lugar 19",
-        descripcion: "Escribe aquí la descripción."
-    },
-
-    // FOTOGRAFÍA 20
-    {
-        imagen: "../img/instalacion20.jpg",
-        nombre: "Nombre del lugar 20",
-        descripcion: "Escribe aquí la descripción."
-    },
-
-    // FOTOGRAFÍA 21
-    {
-        imagen: "../img/instalacion21.jpg",
-        nombre: "Nombre del lugar 21",
-        descripcion: "Escribe aquí la descripción."
-    },
-
-    // FOTOGRAFÍA 22
-    {
-        imagen: "../img/instalacion22.jpg",
-        nombre: "Nombre del lugar 22",
-        descripcion: "Escribe aquí la descripción."
-    },
-
-    // FOTOGRAFÍA 23
-    {
-        imagen: "../img/instalacion23.jpg",
-        nombre: "Nombre del lugar 23",
-        descripcion: "Escribe aquí la descripción."
-    },
-
-    // FOTOGRAFÍA 24
-    {
-        imagen: "../img/instalacion24.jpg",
-        nombre: "Nombre del lugar 24",
-        descripcion: "Escribe aquí la descripción."
-    },
-
-    // FOTOGRAFÍA 25
-    {
-        imagen: "../img/instalacion25.jpg",
-        nombre: "Nombre del lugar 25",
-        descripcion: "Escribe aquí la descripción."
+        nombre: "Estacionamiento de Maestros",
+        descripcion: "Aqui es donde se estacionan los maestros y nuestros directivos."
     }
-
 ];
 
 
@@ -2667,5 +2589,54 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll(".submenu-itace a").forEach(function (enlace) {
         enlace.addEventListener("click", cerrarSubmenus);
     });
+
+});
+
+/* =====================================
+   CONTROL DE LOS HIMNOS
+===================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const himnos = document.querySelectorAll(".audio-himno");
+    const musicaFondo = document.getElementById("musicaFondo");
+    const botonMusica = document.getElementById("botonMusica");
+
+    himnos.forEach(himno => {
+
+        himno.addEventListener("play", () => {
+
+            // Pausar los demás himnos
+            himnos.forEach(otroHimno => {
+                if (otroHimno !== himno) {
+                    otroHimno.pause();
+                }
+            });
+
+            // Pausar música de fondo
+            if (musicaFondo) {
+                musicaFondo.pause();
+            }
+
+            // Actualizar botón de música
+            if (botonMusica) {
+                botonMusica.setAttribute("aria-pressed", "false");
+                botonMusica.setAttribute(
+                    "aria-label",
+                    "Reproducir música"
+                );
+            }
+
+        });
+
+    });
+
+    // Si se reproduce la música de fondo,
+    // pausar los himnos.
+    if (musicaFondo) {
+        musicaFondo.addEventListener("play", () => {
+            himnos.forEach(himno => himno.pause());
+        });
+    }
 
 });

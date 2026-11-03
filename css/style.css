@@ -19076,3 +19076,124 @@ button:focus-visible {
         box-shadow: none;
     }
 }
+
+/* =====================================
+   HIMNOS DE NUESTRA IDENTIDAD
+===================================== */
+
+.himnos-identidad {
+    padding: 65px 25px;
+    margin: 55px auto;
+    max-width: 1150px;
+    background: linear-gradient(135deg, #f3f7ff, #fff8e9);
+    border-radius: 28px;
+    text-align: center;
+}
+
+.himnos-encabezado span {
+    color: #b58a36;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.himnos-encabezado h2 {
+    color: #172b4d;
+    font-size: clamp(26px, 4vw, 38px);
+    margin: 15px 0;
+}
+
+.himnos-encabezado p {
+    max-width: 720px;
+    margin: 0 auto 35px;
+    color: #53637a;
+    line-height: 1.8;
+}
+
+.himnos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.himno-tarjeta {
+    background: white;
+    border: 1px solid #e6d6ae;
+    border-radius: 24px;
+    padding: 35px 25px;
+    box-shadow: 0 10px 25px rgba(23, 43, 77, 0.09);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.himno-tarjeta:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 30px rgba(23, 43, 77, 0.15);
+}
+
+.himno-icono {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.himno-etiqueta {
+    color: #b58a36;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.himno-tarjeta h3 {
+    color: #172b4d;
+    margin: 15px 0;
+    font-size: 23px;
+}
+
+.himno-tarjeta p {
+    color: #53637a;
+    line-height: 1.7;
+    min-height: 80px;
+}
+
+.audio-himno {
+    display: block;
+    width: 100%;
+    max-width: 380px;
+    margin: 22px auto;
+    accent-color: #172b4d;
+}
+
+.himno-frase {
+    display: block;
+    color: #b58a36;
+    font-size: 13px;
+    font-style: italic;
+}
+
+.himnos-mensaje {
+    color: #53637a;
+    font-style: italic;
+    margin: 35px auto 0;
+    max-width: 700px;
+    line-height: 1.8;
+}
+
+/* DISEÑO PARA CELULARES */
+
+@media (max-width: 700px) {
+    .himnos-identidad {
+        padding: 40px 15px;
+        margin: 30px auto;
+    }
+
+    .himnos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .himno-tarjeta {
+        padding: 25px 18px;
+    }
+
+    .himno-tarjeta p {
+        min-height: auto;
+    }
+}
