@@ -5405,6 +5405,7 @@ input:focus-visible {
     }
 }
 
+
 /* ==========================================
    73. PIE DE PÁGINA GENERAL
 ========================================== */
@@ -5419,6 +5420,8 @@ footer,
     );
 
     color: #ffffff;
+    text-align: center;
+    padding: 30px 20px;
 }
 
 /* ==========================================
@@ -5428,13 +5431,17 @@ footer,
 .footer-contenedor,
 .pie-pagina-contenedor {
     display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr;
-    gap: 35px;
+    grid-template-columns: 1fr;
+    gap: 15px;
 
     width: min(92%, 1200px);
     margin: 0 auto;
-    padding: 45px 0 32px;
+    padding: 25px 0;
+
+    text-align: center;
+    justify-items: center;
 }
+
 
 /* ==========================================
    75. IDENTIDAD INSTITUCIONAL DEL FOOTER
