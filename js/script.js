@@ -919,7 +919,68 @@ document.addEventListener("DOMContentLoaded", function () {
             formacion: "Ingeniería Química y Maestría en Docencia",
             antiguedad: "No especificada",
             salon: "C1"
-        }
+        },
+        
+{
+    nombre: "José López Vázquez",
+    academia: "Formación Técnica",
+    materias: "Módulo de Mantenimiento Industrial",
+    semestres: "3.º y 5.º, turno vespertino",
+    formacion: "Ingeniería Industrial",
+    antiguedad: "No especificada",
+    salon: "No especificado"
+},
+
+{
+    nombre: "Omar Saúl González Alatriste",
+    academia: "Prefectura",
+    materias: "Prefecto, responsable de tercer semestre",
+    semestres: "3.º",
+    formacion: "No especificada",
+    antiguedad: "32 años",
+    salon: "B2"
+},
+
+{
+    nombre: "Diana Janeth Uriegas Garza",
+    academia: "Matemáticas",
+    materias: "Habilidades para hablar en público, Matemáticas Básicas y Club de Oratoria",
+    semestres: "1.º, 3.º y 5.º",
+    formacion: "Licenciatura en Administración por el Instituto Tecnológico de Reynosa",
+    antiguedad: "No especificada",
+    salon: "No especificado"
+},
+
+{
+    nombre: "José Luis Gonzales López",
+    academia: "Formación Técnica",
+    materias: "Módulo de Semiconductores y Pensamiento Matemático 3",
+    semestres: "3.º",
+    formacion: "No especificada",
+    antiguedad: "No especificada",
+    salon: "No especificado"
+},
+
+{
+    nombre: "Javier Alfonso Acosta García",
+    academia: "Formación Técnica",
+    materias: "Módulo de Mantenimiento Automotriz",
+    semestres: "3.º y 5.º",
+    formacion: "Ingeniería Electromecánica y Maestría en Ingeniería Industrial y Manufactura Avanzada",
+    antiguedad: "No especificada",
+    salon: "No especificado"
+},
+
+{
+    nombre: "Mario Alonso Santoyo Arrollo",
+    academia: "Formación Técnica",
+    materias: "Módulo Profesional de Mantenimiento Industrial 2 y 4",
+    semestres: "3.º y 5.º",
+    formacion: "Ingeniería Industrial, carrera técnica en Refrigeración y Climatización y Maestría en Educación",
+    antiguedad: "No especificada",
+    salon: "No especificado"
+}
+
 
     ];
 
